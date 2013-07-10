@@ -68,11 +68,11 @@ if(require.main == module) {
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
         .option('-u, --url <url>', 'URL to download')
         .parse(process.argv);
-    console.log(program.file + " " + program.checks + " " + program.url)
+    //console.log(program.file + " " + program.checks + " " + program.url)
     if (program.url != undefined){
 	rest.get(program.url).on('complete',function(data,response){
 	    // TODO: should check response for validity...
-	    console.log("Response: " + response);
+	    //console.log("Response: " + response);
 
 	    // Not the best way, but minimizing re-writing checking routine...
 	    fs.writeFileSync('tmpfile.html', data)	
